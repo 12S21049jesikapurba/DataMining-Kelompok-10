@@ -1,6 +1,12 @@
 # Case 4: DiTenun - Ulos Image Classification
+<div align="center">
+  <img src="DiTenun.png" alt="DiTenun Logo" width="1000"/>
+</div>
 
 #### Data Mining - Kelompok 10
+- 12S21047 | Elshaday Simamora
+- 12S21048 | Nessy Pangaribuan
+- 12S21049 | Jesika Purba
 
 ## 📑 Deskripsi Proyek
 DiTenun merupakan inisiatif dari Institut Teknologi Del (IT Del) melalui start-up Digital Tenun Nusantara (DiTenun) yang berfokus pada pelestarian dan pengembangan motif tenun tradisional ulos. Start-up ini menghasilkan aplikasi mobile dan web bernama DiTenun yang memiliki fitur utama untuk menghasilkan motif baru menggunakan pendekatan kecerdasan buatan. 
