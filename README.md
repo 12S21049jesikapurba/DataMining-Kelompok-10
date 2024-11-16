@@ -1,6 +1,6 @@
 # Case 4: DiTenun - Ulos Image Classification
 <div align="center">
-  <img src="DiTenun.png" alt="DiTenun Logo" width="1000"/>
+  <img src="DiTenun.png" alt="DiTenun Logo" width="850"/>
 </div>
 
 #### Data Mining - Kelompok 10
