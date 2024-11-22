@@ -24,9 +24,22 @@ Ulos Motif Dataset can be accessed <a
 ## 📑 Business Understanding
 **DiTenun - Ulos Image Classification**
 
-DiTenun is an organization dedicated to the preservation and promotion of Indonesia’s traditional woven fabrics, particularly Ulos, a cultural heritage of the Batak community. With its primary role in digitizing and showcasing Ulos motifs to a wider audience, DiTenun seeks to integrate modern technology into the traditional sector. However, one major challenge lies in the vast variety of Ulos motifs, each with intricate patterns, colors, and details, making manual identification and classification a time-consuming and labor-intensive process.
+`Objektif Bisnis `
+Ulos adalah kain tradisional suku Batak yang memiliki berbagai motif sesuai dengan makna budayanya. Motif yang beragam dengan variasi dan pola yang rumit sering kali menyebabkan penggolongan ulos yang cukup rumit. Dengan mengembangkan sistem klasifikasi menggunakan algoritma CNN (Convolutional Neural Network), diharapkan dapat membantu para pengrajin lokal maupun industri tekstil dalam mengidentifikasi dan mendokumentasikan motif ulos dengan lebih efisien dan akurat. 
 
-To address this challenge, the development of an image classification system using Convolutional Neural Networks (CNN) is crucial for automatically categorizing Ulos motifs based on the available dataset of Ulos images. This classification model aims to enhance the speed and accuracy of motif identification, supporting cultural preservation efforts and making Ulos motifs more accessible to the public, artisans, and researchers. This initiative aligns with DiTenun’s mission to promote and sustain Ulos heritage effectively through modern technological advancements.
+`Tujuan Bisnis`
+Tujuan dari proyek ini adalah sebagai berikut:
+- Mengembangkan model klasifikasi gambar ulos dengan tingkat akurasi >90%.
+- Mengurangi waktu yang dibutuhkan untuk identifikasi motif secara manual.
+- Memberikan data terstruktur tentang motif ulos untuk mendukung pelestarian dan edukasi budaya.
+- Meningkatkan efisiensi produksi dan kualitas produk ulos.
+
+`Struktur Data`
+Struktur data yang digunakan dalam pengerjaan proyek ini adalah gambar motif ulos dalam formmat PNG yang akan dipisahkan kedalam masing-masing label kategori motif ulosnya. Jumlah data yang digunakan adalah .... per kategori motif, dengan total dataset adalah ....  gambar. Dataset ini didapatkan dari koleksi pengrajin lokal yaitu Ditenun. 
+
+` Rencana Pelaksanaan Proyek `
+Proyek ini memiliki hambatan potensial, yaitu pengumpulan data yang terbatas dan pelabelan data yang masih belum akurat. 
+Ruang lingkup dari proyek ini adalah pembangunan model CNN untuk klasifikasi motif ulos serta membangun platform untuk implementasinya. Timeline yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu untuk proses pengumpulan dan pelabelan data sampai dengan implementasi.
 
 ## Data Understanding
 
