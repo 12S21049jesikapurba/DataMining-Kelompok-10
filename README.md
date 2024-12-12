@@ -6,23 +6,10 @@ Classification for the motif images of ulos will be conducted using CNN (Convolu
   <img src="Picture/DiTenun.png" alt="DiTenun Logo" width="800"/>
 </div>
 
-## CNN Algorithm
-A convolutional neural network is a feed-forward neural network that analyzes visual images by processing data in a grid-like pattern. It’s also known as ConvNet. A convolutional neural network detects and classifies objects in an image.
-
-<div align="center">
- <img src="Picture/CNN overview.png" height="400" width="800"/>
-</div>
-
-For more explanation, [click here!](https://insightsimaging.springeropen.com/articles/10.1007/s13244-018-0639-9). 
-
-## Dataset
-Ulos Motif Dataset can be accessed <a
-    href="Dataset"> <button>here</button></a>.
-
 ## 📑 Business Understanding
 **DiTenun - Ulos Image Classification**
 
-`Based on Data `
+`Based on Data `<br><br>
 Ulos adalah kain tradisional suku Batak yang memiliki berbagai motif sesuai dengan makna budayanya. Motif yang beragam dengan variasi dan pola yang rumit sering kali menyebabkan penggolongan ulos yang cukup rumit. Tugas analitik utama adalah klasifikasi motif ulos. Dengan menggunakan algoritma Convolutional Neural Network (CNN), proyek ini bertujuan untuk memprediksi kelas atau kategori ulos berdasarkan gambar motifnya. 
 
 Data yang diperlukan adalah gambar ulos yang memiliki deskripsi tentang jenis ulosnya (misalnya: Ulos Ragidup, Ulos Sibolang, Ulos Sadum, dan lain-lain). Dataset dapat diakses dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos). Dataset berisi 1.231 gambar motif ulos dengan 6 label yang menunjukkan jenis motif ulos (Pinuncaan, Ragi Hidup, Ragi Hotang, Sadum, Sibolang, Tumtuman). Dataset ini merupakan dataset via public data. Data sudah dibagi untuk train dan test data.  
@@ -44,6 +31,13 @@ Ruang lingkup (Berdasarkan Work Breakdown Structure) dari proyek ini adalah seba
 Timeline yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu untuk proses pengumpulan dan pelabelan data sampai dengan implementasi (deployment)
 
 ## Data Understanding
+- Mengumpulkan data: Data dikumpulkan dari Kaggle
+  
+
+- Menelaah Data
+
+
+- Memvalidasi Data
 
 ## Modeling
 
