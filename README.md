@@ -1,9 +1,6 @@
 # Case 4: 
 # DiTenun - Ulos Image Classification 
-Classification for the smallest motif images of ulos will be conducted using CNN (Convolutional Neural Networks) algorithms.
-Klasifikasi untu gambar motif ulos dengan menggunakan algoritma CNN (Convolutional Neural Networks).
-
-🚀 How to explore the DiTenun-Ulos classification? [Click here](). 
+Classification for the motif images of ulos will be conducted using CNN (Convolutional Neural Networks) algorithms.
 
 <div align="center">
   <img src="Picture/DiTenun.png" alt="DiTenun Logo" width="800"/>
@@ -25,25 +22,11 @@ Ulos Motif Dataset can be accessed <a
 ## 📑 Business Understanding
 **DiTenun - Ulos Image Classification**
 
-`Objektif Project `
-Ulos adalah kain tradisional suku Batak yang memiliki berbagai motif sesuai dengan makna budayanya. Motif yang beragam dengan variasi dan pola yang rumit sering kali menyebabkan penggolongan ulos yang cukup rumit. Tugas analitik utama adalah klasifikasi motif ulos. Dengan menggunakan algoritma Convolutional Neural Network (CNN), proyek ini bertujuan untuk memprediksi kelas atau kategori ulos berdasarkan gambar motifnya. Dataset gambar ulos berasal dari organisasi DiTenun yang bekerja sama dengan IT Del, yang mengharapkan sistem klasifikasi ini dapat membantu proses identifikasi, pelabelan, dan dokumentasi motif ulos secara otomatis dan efisien.
+`Based on Data `
+Ulos adalah kain tradisional suku Batak yang memiliki berbagai motif sesuai dengan makna budayanya. Motif yang beragam dengan variasi dan pola yang rumit sering kali menyebabkan penggolongan ulos yang cukup rumit. Tugas analitik utama adalah klasifikasi motif ulos. Dengan menggunakan algoritma Convolutional Neural Network (CNN), proyek ini bertujuan untuk memprediksi kelas atau kategori ulos berdasarkan gambar motifnya. 
 
-`Tujuan Project`
-Tujuan dari proyek ini adalah mengembangkan algoritma CNN untuk melakukan klasifikasi terhadap motif ulos berdasarkan jenis motifnya. Target utamanya adalah mencapai akurasi ≥90% pada data uji. Model akan dilatih secara terpisah untuk 2 dataset: gambar hitam putih (black) dan gambar berwarna (color), agar setiap model dapat berfokus pada karakteristik data masing-masing.
-
-`Struktur Data`
-Dataset terdiri dari gambar ulos dengan label motif tertentu, baik dalam versi hitam putih (black) maupun berwarna (color). Label motif (kelas) pada dataset adalah kategori yang merepresentasikan jenis motif ulos yang akan dikenali.
-Setiap gambar memiliki informasi berikut:
-- Dimensi gambar (width, height).
-- Saluran warna (RGB untuk color dan grayscale untuk black).
-- Nama kelas (label) yang mewakili jenis motif ulos, misalnya ulos_ragi, ulos_sadum, dll.
-
-Struktur dataset yang disiapkan adalah dataset untuk motif ulos versi hitam putih dan berwarna (disajikan secara terpisah). Nantinya, setiap data ini akan dibagi lagi untuk pemisahan data training dan data testing. 
-
-Setiap kelas motif  ulos pada dataset memiliki jumlah data sebanyak 64 gambar untuk memastikan model CNN dapat digunakan dengan baik. Jika jumlah data per kelas masih kurang, maka augmentasi data akan dilakukan. 
-
-Sumber dataset disediakan oleh organisasi DiTenun dan dapat diakses <a
-    href="Dataset"> <button>disini</button></a>.
+Data yang diperlukan adalah gambar ulos yang memiliki deskripsi tentang jenis ulosnya (misalnya: Ulos Ragidup, Ulos Sibolang, Ulos Sadum, dan lain-lain). Dataset dapat diakses dari <a
+    href="https://www.kaggle.com/code/fthnaja/ulos-classification/notebook](https://www.kaggle.com/datasets/fthnaja/kain-ulos"> <button>Kaggle</button></a>. Dataset berisi 1.231 gambar motif ulos dengan 6 label yang menunjukkan jenis motif ulos (Pinuncaan, Ragi Hidup, Ragi Hotang, Sadum, Sibolang, Tumtuman). Dataset ini merupakan dataset via public data. Data ini 
 
 `Rencana Pelaksanaan Proyek `
 Ruang lingkup (Berdasarkan Work Breakdown Structure) dari proyek ini adalah sebagai berikut:
