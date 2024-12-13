@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Fungsi untuk memuat model CNN
 def load_model():
-    model = tf.keras.models.load_model('model_ulos.h5')
+    model = tf.keras.models.load_model('Deployment/model_ulos.h5')
     return model
 
 # Fungsi untuk melakukan prediksi pada gambar
