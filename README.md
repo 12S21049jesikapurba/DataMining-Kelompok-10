@@ -32,9 +32,12 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
 
 ## _Data Understanding_
 - Mengumpulkan data:
-  Data dikumpulkan dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos) yang berisi berbagai motif ulos.
+  Data dikumpulkan dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos) yang berisi berbagai motif ulos.<br>
   Struktur datasetnya adalah sebagai berikut:
-  <img width="419" alt="dataset description" src="Picture/Data Understanding/Deskripsi Data.png">
+  <p align="center">
+  <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="300">
+</p>
+
 
   
 
