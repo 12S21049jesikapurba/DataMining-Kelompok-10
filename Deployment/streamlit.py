@@ -71,8 +71,6 @@ if page == "Klasifikasi Gambar":
                 plot_confidence(prediction, class_names)
 
                 # Deskripsi tambahan tentang ulos yang diprediksi
-                st.markdown (
-                """
                 ulos_descriptions = {
                     "Pinuncaan": {
                         "Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
@@ -99,11 +97,11 @@ if page == "Klasifikasi Gambar":
                         "Kegunaan": "- Acara Tradisional: Digunakan untuk menunjukkan posisi dalam keluarga. - Ikatan Keluarga: Dipakai oleh anak pertama dalam keluarga sebagai simbol tanggung jawab."
                     }
                 }
-                """
-                )
+                
                 
                 ulos_info = ulos_descriptions.get(predicted_class, {})
-                st.markdown(f"""**Tentang {predicted_class}:**
+                st.markdown("""
+                ### **Tentang {predicted_class}:**
                 
                 **Desain:**
                 {ulos_info.get('Desain', 'Deskripsi desain belum tersedia.')}
