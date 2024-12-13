@@ -50,7 +50,7 @@ if page == "Klasifikasi Gambar":
     if gu_image is not None:
         # Tampilkan gambar yang diunggah
         image = Image.open(gu_image)
-        st.image(image, caption="Gambar Diupload, use_container_width=True)
+        st.image(image, caption="Gambar Diupload", use_container_width=True)
 
         # Muat model dan lakukan prediksi
         st.write("Processing image...")
