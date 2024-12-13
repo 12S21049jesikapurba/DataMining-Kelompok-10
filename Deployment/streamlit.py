@@ -99,21 +99,13 @@ if page == "Klasifikasi Gambar":
                 }
                 
                 
-                ulos_info = ulos_descriptions.get(predicted_class, {})
-                st.markdown("""
-                ### **Tentang {predicted_class}:**
+                st.markdown(f"""*Tentang {predicted_class}:*\n{ulos_descriptions.get(predicted_class, 'Deskripsi untuk jenis ulos ini belum tersedia.')}""")
+                            else:
+                                st.error("Model output dimensions do not match the number of class names. Please check the model and class labels.")
                 
-                **Desain:**
-                {ulos_info.get('Desain', 'Deskripsi desain belum tersedia.')}
+                        except Exception as e:
+                            st.error(f"An error occurred: {e}")
 
-                **Kegunaan:**
-                {ulos_info.get('Kegunaan', 'Deskripsi kegunaan belum tersedia.')}
-                """)
-            else:
-                st.error("Model output dimensions do not match the number of class names. Please check the model and class labels.")
-
-        except Exception as e:
-            st.error(f"An error occurred: {e}")
 
 elif page == "Panduan Pengguna":
     st.header("Panduan Pengguna")
