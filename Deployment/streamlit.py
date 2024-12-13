@@ -73,8 +73,8 @@ if page == "Klasifikasi Gambar":
                 # Deskripsi tambahan tentang ulos yang diprediksi
                 ulos_descriptions = {
                     "Pinuncaan": {
-                        "Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
-                        "Kegunaan": "\n- Acara Resmi: Sering digunakan dalam upacara adat dan acara resmi oleh pemimpin atau raja.\n- Pernikahan: Dipakai oleh pengantin dan keluarga dalam perayaan pernikahan.\n- Marpaniaran: Digunakan saat pesta besar dalam acara marpaniaran.\n- Simbol Kehormatan: Melambangkan status dan kehormatan bagi pemakainya."
+                        """**Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
+                        "Kegunaan": "\n- Acara Resmi: Sering digunakan dalam upacara adat dan acara resmi oleh pemimpin atau raja.\n- Pernikahan: Dipakai oleh pengantin dan keluarga dalam perayaan pernikahan.\n- Marpaniaran: Digunakan saat pesta besar dalam acara marpaniaran.\n- Simbol Kehormatan: Melambangkan status dan kehormatan bagi pemakainya.**"""
                     },
                     "Ragi Hidup": {
                         "Desain": "Ulos ini berbentuk panjang dan lebar, dengan pola sederhana namun elegan.",
