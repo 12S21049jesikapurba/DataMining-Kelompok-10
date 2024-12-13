@@ -37,8 +37,8 @@ page = st.sidebar.radio("Pilih Fitur", ["Klasifikasi Gambar", "Panduan Pengguna"
 
 if page == "Klasifikasi Gambar":
     st.markdown(
-        """**Tentang Aplikasi:**
-        
+        """
+        **Tentang Aplikasi:**
         Aplikasi ini menggunakan model **Convolutional Neural Network (CNN)** untuk mengklasifikasikan jenis kain **Ulos** berdasarkan gambar yang diunggah pengguna. Model ini bertujuan untuk mendukung pelestarian budaya dan meningkatkan pemahaman tentang kain tradisional ulos.
         """
     )
@@ -151,3 +151,6 @@ elif page == "Panduan Pengguna":
 
 st.write("\n\n")
 st.write("Developed by Kelompok 3 - Data Mining")
+
+
+
