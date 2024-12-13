@@ -96,16 +96,17 @@ if page == "Klasifikasi Gambar":
                         "Kegunaan": "- **Acara Tradisional:** Digunakan untuk menunjukkan posisi dalam keluarga.\n- **Ikatan Keluarga:** Dipakai oleh anak pertama dalam keluarga sebagai simbol tanggung jawab."
                     }
                 }
-                
+
                 ulos_info = ulos_descriptions.get(predicted_class, {})
                 st.markdown(f"""**Tentang {predicted_class}:**
                 
                 **Desain:**
                 {ulos_info.get('Desain', 'Deskripsi desain belum tersedia.')}
-
+                
                 **Kegunaan:**
                 {ulos_info.get('Kegunaan', 'Deskripsi kegunaan belum tersedia.').replace('\\n', '\n')}
                 """)
+
             else:
                 st.error("Model output dimensions do not match the number of class names. Please check the model and class labels.")
 
