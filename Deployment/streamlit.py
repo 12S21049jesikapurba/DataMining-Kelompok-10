@@ -104,7 +104,7 @@ if page == "Klasifikasi Gambar":
                 {ulos_info.get('Desain', 'Deskripsi desain belum tersedia.')}
                 
                 **Kegunaan:**
-                {ulos_info.get('Kegunaan', 'Deskripsi kegunaan belum tersedia.').replace('\\n', '\n')}
+                {ulos_info.get('Kegunaan', 'Deskripsi kegunaan belum tersedia.')}
                 """)
 
             else:
