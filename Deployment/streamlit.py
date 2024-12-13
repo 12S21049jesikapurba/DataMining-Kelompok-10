@@ -72,32 +72,34 @@ if page == "Klasifikasi Gambar":
 
                 # Deskripsi tambahan tentang ulos yang diprediksi
                 st.markdown (
+                """
                 ulos_descriptions = {
                     "Pinuncaan": {
-                        "Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
-                        "Kegunaan": "- Acara Resmi: Sering digunakan dalam upacara adat dan acara resmi oleh pemimpin atau raja. -Pernikahan: Dipakai oleh pengantin dan keluarga dalam perayaan pernikahan. - Marpaniaran: Digunakan saat pesta besar dalam acara marpaniaran. - Simbol Kehormatan: Melambangkan status dan kehormatan bagi pemakainya."
+                        ***Desain:*** "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
+                        ***Kegunaan:*** "- Acara Resmi: Sering digunakan dalam upacara adat dan acara resmi oleh pemimpin atau raja. -Pernikahan: Dipakai oleh pengantin dan keluarga dalam perayaan pernikahan. - Marpaniaran: Digunakan saat pesta besar dalam acara marpaniaran. - Simbol Kehormatan: Melambangkan status dan kehormatan bagi pemakainya."
                     },
                     "Ragi Hidup": {
-                        "Desain": "Ulos ini berbentuk panjang dan lebar, dengan pola sederhana namun elegan.",
-                        "Kegunaan": "- Pakaian Sehari-hari: Digunakan sebagai baju atau sarung untuk kenyamanan. - Simbol Kehidupan: Melambangkan kehidupan dan keberlangsungan."
+                        ***Desain:*** "Ulos ini berbentuk panjang dan lebar, dengan pola sederhana namun elegan.",
+                        ***Kegunaan:***  "- Pakaian Sehari-hari: Digunakan sebagai baju atau sarung untuk kenyamanan. - Simbol Kehidupan: Melambangkan kehidupan dan keberlangsungan."
                     },
                     "Ragi Hotang": {
-                        "Desain": "Memiliki pola yang rumit dan berwarna gelap, sering dihiasi motif tradisional Batak.",
-                        "Kegunaan": "- Selimut: Digunakan untuk memberikan kehangatan. - Simbol Status: Melambangkan status sosial dalam acara tertentu."
+                        ***Desain:*** "Memiliki pola yang rumit dan berwarna gelap, sering dihiasi motif tradisional Batak.",
+                        ***Kegunaan:***  "- Selimut: Digunakan untuk memberikan kehangatan. - Simbol Status: Melambangkan status sosial dalam acara tertentu."
                     },
                     "Sadum": {
-                        "Desain": "Memiliki bingkai bergaris gelap di sisi dengan warna ceria di tengahnya.",
-                        "Kegunaan": "- Acara Bahagia: Digunakan dalam perayaan sukacita. - Kenang-Kenangan: Sering dijadikan hadiah untuk orang terkasih."
+                        ***Desain:*** "Memiliki bingkai bergaris gelap di sisi dengan warna ceria di tengahnya.",
+                        ***Kegunaan:***  "- Acara Bahagia: Digunakan dalam perayaan sukacita. - Kenang-Kenangan: Sering dijadikan hadiah untuk orang terkasih."
                     },
                     "Sibolang": {
-                        "Desain": "Berwarna dominan hitam dan putih dengan pola bergaris sederhana.",
-                        "Kegunaan": "- Acara Duka Cita: Dipakai dalam upacara pemakaman untuk menghormati yang meninggal. - Simbol Kesedihan: Melambangkan duka cita."
+                        ***Desain:*** "Berwarna dominan hitam dan putih dengan pola bergaris sederhana.",
+                        ***Kegunaan:***  "- Acara Duka Cita: Dipakai dalam upacara pemakaman untuk menghormati yang meninggal. - Simbol Kesedihan: Melambangkan duka cita."
                     },
                     "Tumtuman": {
-                        "Desain": "Memiliki pola geometris unik, melambangkan harapan untuk masa depan cerah.",
-                        "Kegunaan": "- Acara Tradisional: Digunakan untuk menunjukkan posisi dalam keluarga. - Ikatan Keluarga: Dipakai oleh anak pertama dalam keluarga sebagai simbol tanggung jawab."
+                        ***Desain:*** "Memiliki pola geometris unik, melambangkan harapan untuk masa depan cerah.",
+                        ***Kegunaan:***  "- Acara Tradisional: Digunakan untuk menunjukkan posisi dalam keluarga. - Ikatan Keluarga: Dipakai oleh anak pertama dalam keluarga sebagai simbol tanggung jawab."
                     }
                 }
+                """
                 )
                 
                 ulos_info = ulos_descriptions.get(predicted_class, {})
