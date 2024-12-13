@@ -39,18 +39,17 @@ if page == "Klasifikasi Gambar":
     st.markdown(
         """**Tentang Aplikasi:**
         
-        Aplikasi ini menggunakan model **Convolutional Neural Network (CNN)** untuk mengklasifikasikan jenis kain **Ulos** berdasarkan gambar yang diunggah pengguna. 
-        Model ini bertujuan untuk mendukung pelestarian budaya dan meningkatkan pemahaman tentang kain tradisional ulos.
+        Aplikasi ini menggunakan model **Convolutional Neural Network (CNN)** untuk mengklasifikasikan jenis kain **Ulos** berdasarkan gambar yang diunggah pengguna. Model ini bertujuan untuk mendukung pelestarian budaya dan meningkatkan pemahaman tentang kain tradisional ulos.
         """
     )
 
     # Upload file gambar
-    gu_image = st.file_uploader("Upload sebuah gambar Ulos", type=["jpg", "jpeg", "png"])
+    gu_image = st.file_uploader("Upload an image of Ulos", type=["jpg", "jpeg", "png"])
 
     if gu_image is not None:
         # Tampilkan gambar yang diunggah
         image = Image.open(gu_image)
-        st.image(image, caption="Gambar Diupload", use_container_width=True)
+        st.image(image, caption="Uploaded Image", use_container_width=True)
 
         # Muat model dan lakukan prediksi
         st.write("Processing image...")
@@ -73,28 +72,28 @@ if page == "Klasifikasi Gambar":
                 # Deskripsi tambahan tentang ulos yang diprediksi
                 ulos_descriptions = {
                     "Pinuncaan": {
-                        """**Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
-                        "Kegunaan": "\n- Acara Resmi: Sering digunakan dalam upacara adat dan acara resmi oleh pemimpin atau raja.\n- Pernikahan: Dipakai oleh pengantin dan keluarga dalam perayaan pernikahan.\n- Marpaniaran: Digunakan saat pesta besar dalam acara marpaniaran.\n- Simbol Kehormatan: Melambangkan status dan kehormatan bagi pemakainya.**"""
+                        "Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
+                        "Kegunaan": "Acara Resmi: Sering digunakan dalam upacara adat dan acara resmi oleh pemimpin atau raja.\n- Pernikahan: Dipakai oleh pengantin dan keluarga dalam perayaan pernikahan.\n- Marpaniaran: Digunakan saat pesta besar dalam acara marpaniaran.\n- Simbol Kehormatan: Melambangkan status dan kehormatan bagi pemakainya."
                     },
                     "Ragi Hidup": {
                         "Desain": "Ulos ini berbentuk panjang dan lebar, dengan pola sederhana namun elegan.",
-                        "Kegunaan": "\n- Pakaian Sehari-hari: Digunakan sebagai baju atau sarung untuk kenyamanan.\n- Simbol Kehidupan: Melambangkan kehidupan dan keberlangsungan."
+                        "Kegunaan": "Pakaian Sehari-hari: Digunakan sebagai baju atau sarung untuk kenyamanan.\n- Simbol Kehidupan: Melambangkan kehidupan dan keberlangsungan."
                     },
                     "Ragi Hotang": {
                         "Desain": "Memiliki pola yang rumit dan berwarna gelap, sering dihiasi motif tradisional Batak.",
-                        "Kegunaan": "\n- Selimut: Digunakan untuk memberikan kehangatan.\n- Simbol Status: Melambangkan status sosial dalam acara tertentu."
+                        "Kegunaan": "Selimut: Digunakan untuk memberikan kehangatan.\n- Simbol Status: Melambangkan status sosial dalam acara tertentu."
                     },
                     "Sadum": {
                         "Desain": "Memiliki bingkai bergaris gelap di sisi dengan warna ceria di tengahnya.",
-                        "Kegunaan": "\n- Acara Bahagia: Digunakan dalam perayaan sukacita.\n- Kenang-Kenangan: Sering dijadikan hadiah untuk orang terkasih."
+                        "Kegunaan": "Acara Bahagia: Digunakan dalam perayaan sukacita.\n- Kenang-Kenangan: Sering dijadikan hadiah untuk orang terkasih."
                     },
                     "Sibolang": {
                         "Desain": "Berwarna dominan hitam dan putih dengan pola bergaris sederhana.",
-                        "Kegunaan": "\n- Acara Duka Cita: Dipakai dalam upacara pemakaman untuk menghormati yang meninggal.\n- Simbol Kesedihan: Melambangkan duka cita."
+                        "Kegunaan": "Acara Duka Cita: Dipakai dalam upacara pemakaman untuk menghormati yang meninggal.\n- Simbol Kesedihan: Melambangkan duka cita."
                     },
                     "Tumtuman": {
                         "Desain": "Memiliki pola geometris unik, melambangkan harapan untuk masa depan cerah.",
-                        "Kegunaan": "\n- Acara Tradisional: Digunakan untuk menunjukkan posisi dalam keluarga.\n- Ikatan Keluarga: Dipakai oleh anak pertama dalam keluarga sebagai simbol tanggung jawab."
+                        "Kegunaan": "Acara Tradisional: Digunakan untuk menunjukkan posisi dalam keluarga.\n- Ikatan Keluarga: Dipakai oleh anak pertama dalam keluarga sebagai simbol tanggung jawab."
                     }
                 }
                 
@@ -105,7 +104,8 @@ if page == "Klasifikasi Gambar":
                 {ulos_info.get('Desain', 'Deskripsi desain belum tersedia.')}
 
                 **Kegunaan:**
-                {ulos_info.get('Kegunaan', 'Deskripsi kegunaan belum tersedia.')}""")
+                {ulos_info.get('Kegunaan', 'Deskripsi kegunaan belum tersedia.').replace('\\n', '\n')}
+                """)
             else:
                 st.error("Model output dimensions do not match the number of class names. Please check the model and class labels.")
 
