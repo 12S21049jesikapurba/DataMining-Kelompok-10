@@ -33,68 +33,10 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
 ## _Data Understanding_
 - Mengumpulkan data:
   Data dikumpulkan dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos) yang berisi berbagai motif ulos.
-  Struktur datasetnya adalah sebagari berikut:
-  ## Ragi Hidup
-+------------+--------------+-------------+
-|  Category  |  File Name   | File Format |
-+------------+--------------+-------------+
-| Ragi Hidup | IMG_5125.PNG |     PNG     |
-| Ragi Hidup | IMG_5158.PNG |     PNG     |
-+------------+--------------+-------------+
+  Struktur datasetnya adalah sebagai berikut:
+  <img width="419" alt="dataset description" src="Picture/Data Understanding/Deskripsi Data.png">
 
-## Sadum
-+----------+----------------------------+-------------+
-| Category |         File Name          | File Format |
-+----------+----------------------------+-------------+
-|  Sadum   | IMG_20240705_231559_5.jpg  |     jpg     |
-|  Sadum   | IMG_20240705_231559_36.jpg |     jpg     |
-+----------+----------------------------+-------------+
-
-## Sibolang
-+----------+--------------------------------------------------------+-------------+
-| Category |                       File Name                        | File Format |
-+----------+--------------------------------------------------------+-------------+
-| Sibolang | WhatsApp Image 2024-07-05 at 23.49.23 (15) - Copy.jpeg |    jpeg     |
-| Sibolang |                     1000104052.jpg                     |     jpg     |
-+----------+--------------------------------------------------------+-------------+
-
-## Ragi Hotang
-+-------------+---------------------------+-------------+
-|  Category   |         File Name         | File Format |
-+-------------+---------------------------+-------------+
-| Ragi Hotang |  IMG_20240705_231428.jpg  |     jpg     |
-| Ragi Hotang | IMG_20240611_211520_1.jpg |     jpg     |
-+-------------+---------------------------+-------------+
-
-## Pinuncaan
-+-----------+--------------------------+-------------+
-| Category  |        File Name         | File Format |
-+-----------+--------------------------+-------------+
-| Pinuncaan | IMG_20240611_2011255.jpg |     jpg     |
-| Pinuncaan |       IMG_5327.PNG       |     PNG     |
-+-----------+--------------------------+-------------+
-
-## Tumtuman
-+----------+-------------------------------------------------+-------------+
-| Category |                    File Name                    | File Format |
-+----------+-------------------------------------------------+-------------+
-| Tumtuman | WhatsApp Image 2024-07-06 at 00.02.57 (18).jpeg |    jpeg     |
-| Tumtuman |              ulos (16) - Copy.jpeg              |    jpeg     |
-+----------+-------------------------------------------------+-------------+
- 
-  Jumlah data yang terdapat pada dataset adalah:
-  +-------------+-------------+
-|  Category   | Image Count |
-+-------------+-------------+
-| Ragi Hidup  |     205     |
-|    Sadum    |     204     |
-|  Sibolang   |     206     |
-| Ragi Hotang |     209     |
-|  Pinuncaan  |     201     |
-|  Tumtuman   |     206     |
-+-------------+-------------+
-
-Jumlah total gambar dalam dataset: 1231
+  
 
   ```
   
