@@ -33,22 +33,66 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
 ## _Data Understanding_
 - Mengumpulkan data:
   Data dikumpulkan dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos) yang berisi berbagai motif ulos.<br>
-  Struktur datasetnya adalah sebagai berikut:
+  Struktur dari dataset disajikan 2 per kelas motif ulos, dan dapat dilihat pada gambar dibawah ini. 
   <p align="center">
-  <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="300">
+  <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="200">
 </p>
-
-
+<br>
+Jumlah gambar yang terdapat pada dataset adalah 1.231 gambar dan jumlah untuk masing-masing kelas dapat dilihat pada gambar dibawah ini.
+<p align="center">
+  <img src="Picture/Data Understanding/Mengumpulkan Data.png" alt="dataset description" width="200">
   
-
-  ```
-  
-  ```
-
 - Menelaah Data
+Proses analisis data dilakukan secara eksploratif (_Exploratory Data Analysis_).<br>
+Karakteristik atribut yang diperoleh adalah sebagai berikut:
+<p align="center">
+  <img src="Picture/Data Understanding/Karakteristik Atribut.png" alt="dataset description" width="200">
 
+Keterkaitan antar data dianalisisi dengan menggunakan metode Anova, Kendall's Tau Test, dan Chi-Square Test. Berikut adalah hasilnya:
+```
+ANOVA Test Results:
+F-statistic: 173.15445738956262, p-value: 1.9097527024196994e-139
+Ada perbedaan signifikan dalam ukuran file antar kategori.
 
+Kendall's Tau Test Results:
+Tau: -0.04412125023041999, p-value: 0.031794602025439316
+Ada asosiasi signifikan antara ukuran file dan kategori.
+
+Chi-Squared Test Results:
+Chi-Squared: 1575.0099207161215, p-value: 0.0
+Ada asosiasi signifikan antara kategori dan format file.
+
+Mutual Information between 'Category' and 'File Size (bytes)': 2.8846400016536338
+```
+<div align="center">
+  <img src="Picture/Data Understanding/Keterkaitan Antar Data [1].png" alt="dataset description" width="100" style="margin-right: 10px;">
+  <img src="Picture/Data Understanding/Keterkaitan Antar Data [2].png" alt="dataset description" width="100">
+</div>
+ 
 - Memvalidasi Data
+  Validasi data dilakukan untuk menilai kesesuaian kualitas data. Berikut hasil validasi data yang didapatkan.
+```
+Untuk ukuran data dari 1.231 gambar motif ulos,  1.044 valid dan 187 invalid karena ukuran terlalu besar (>5 MB). File invalid perlu dikompresi untuk memenuhi batas ukuran yang diizinkan.
+```
+```
+Statistik data menunjukkan bahwa dataset memiliki distribusi kategori yang seimbang, didominasi dengan format jpg. Ukuran file bervariasi antara 8 KB hingga 7,25 MB. Beberapa file besar perlu diproses ulang untuk konsistensi.
+```
+Relasi antar atribut menunjukkan Cross-Tabulation antara kategori dan format file sebagai berikut:
+```
+Cross-Tabulation antara Kategori dan Format File:
+File Format  JPG  PNG  jpeg  jpg
+Category                        
+Pinuncaan     10  129     0   62
+Ragi Hidup     0  177     0   28
+Ragi Hotang    0    0     0  209
+Sadum          0    0     0  204
+Sibolang       0    0    50  156
+Tumtuman       0    0   162   44
+```
+<div align="center">
+  <img src="Picture/Data Understanding/Relasi Antar Atribut & Label [1].png" alt="dataset description" width="100" style="margin-right: 10px;">
+  <img src="Picture/Data Understanding/Relasi Antar Atribut [2].png" alt="dataset description" width="100">
+</div>
 
 ## _Modeling_
 
