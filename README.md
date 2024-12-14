@@ -31,16 +31,16 @@ Ruang lingkup (Berdasarkan Work Breakdown Structure) dari proyek ini adalah seba
 _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu untuk proses pengumpulan dan pelabelan data sampai dengan implementasi (_deployment_).
 
 ## _Data Understanding_
-- Mengumpulkan data:
+- Mengumpulkan data<br>
   Data dikumpulkan dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos) yang berisi berbagai motif ulos.<br>
   Struktur dari dataset disajikan 2 per kelas motif ulos, dan dapat dilihat pada gambar dibawah ini. 
   <p align="center">
   <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="200">
 </p>
-<br>
+  <br>
   Jumlah gambar yang terdapat pada dataset adalah 1.231 gambar dan jumlah untuk masing-masing kelas dapat dilihat pada gambar dibawah ini.
 <p align="center">
-  <img src="Picture/Data Understanding/Mengumpulkan Data.png" alt="dataset description" width="200">
+  <img src="Picture/Data Understanding/Mengumpulkan Data.png" alt="dataset description" width="200"><br>
   <br>
   
 - Menelaah Data
@@ -48,8 +48,10 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   Karakteristik atribut yang diperoleh adalah sebagai berikut:
 <p align="center">
   <img src="Picture/Data Understanding/Karakteristik Atribut.png" alt="dataset description" width="200">
-  
-  Keterkaitan antar data dianalisisi dengan menggunakan metode Anova, Kendall's Tau Test, dan Chi-Square Test. Berikut adalah hasilnya:
+   <br>
+ 
+  Keterkaitan antar data dianalisisi dengan menggunakan metode Anova, Kendall's Tau Test, dan Chi-Square Test. 
+  Berikut adalah hasilnya:
   ```
   ANOVA Test Results:
   F-statistic: 173.15445738956262, p-value: 1.9097527024196994e-139
@@ -65,14 +67,17 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   
   Mutual Information between 'Category' and 'File Size (bytes)': 2.8846400016536338
   ```
+ <br>
+
 <div align="center">
-  <img src="Picture/Data Understanding/Keterkaitan Antar Data [1].png" alt="dataset description" width="100">
-  <img src="Picture/Data Understanding/Keterkaitan Antar Data [2].png" alt="dataset description" width="100">
+  <img src="Picture/Data Understanding/Keterkaitan_Antar_Data_[1].png" alt="dataset description" width="100">
+  <img src="Picture/Data Understanding/Keterkaitan_Antar_Data [2].png" alt="dataset description" width="100">
 </div>
  <br>
  
 - Memvalidasi Data
   Validasi data dilakukan untuk menilai kesesuaian kualitas data. Berikut hasil validasi data yang didapatkan.
+
   ```
   Untuk ukuran data dari 1.231 gambar motif ulos,  1.044 valid dan 187 invalid karena ukuran terlalu besar (>5 MB).
   File invalid perlu dikompresi untuk memenuhi batas ukuran yang diizinkan.
@@ -81,6 +86,8 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   Statistik data menunjukkan bahwa dataset memiliki distribusi kategori yang seimbang, didominasi dengan format jpg.
   Ukuran file bervariasi antara 8 KB hingga 7,25 MB. Beberapa file besar perlu diproses ulang untuk konsistensi.
   ```
+   <br>
+   
   Relasi antar atribut menunjukkan Cross-Tabulation antara kategori dan format file sebagai berikut:
   ```
   Cross-Tabulation antara Kategori dan Format File:
@@ -94,8 +101,8 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   Tumtuman       0    0   162   44
   ```
 <div align="center">
-  <img src="Picture/Data Understanding/Relasi Antar Atribut & Label [1].png" alt="dataset description" width="100">
-  <img src="Picture/Data Understanding/Relasi Antar Atribut [2].png" alt="dataset description" width="100">
+  <img src="Picture/Data Understanding/Relasi_Antar_Atribut_&_Label_[1].png" alt="dataset description" width="100">
+  <img src="Picture/Data Understanding/Relasi_Antar_Atribut_[2].png" alt="dataset description" width="100">
 </div>
 
 ## _Modeling_
