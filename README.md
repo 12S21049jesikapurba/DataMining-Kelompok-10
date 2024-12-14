@@ -70,8 +70,8 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
  <br>
 
 <div align="center">
-  <img src="Picture/Data Understanding/Keterkaitan_Antar_Data_[1].png" alt="dataset description" width="100">
-  <img src="Picture/Data Understanding/Keterkaitan_Antar_Data [2].png" alt="dataset description" width="100">
+  <img src="Picture/Data Understanding/Keterkaitan Antar Data [1].png" alt="dataset description" width="50">
+  <img src="Picture/Data Understanding/Keterkaitan Antar Data [2].png" alt="dataset description" width="50">
 </div>
  <br>
  
