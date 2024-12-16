@@ -38,7 +38,7 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="200">
 </p>
   <br>
-  Jumlah gambar yang terdapat pada dataset adalah 1.231 gambar dan jumlah untuk masing-masing kelas dapat dilihat pada gambar dibawah ini.
+   Jumlah gambar yang terdapat pada dataset adalah 1.231 gambar dan jumlah untuk masing-masing kelas dapat dilihat pada gambar dibawah ini.
 <p align="center">
   <img src="Picture/Data Understanding/Mengumpulkan Data.png" alt="dataset description" width="200"><br>
   <br>
@@ -75,6 +75,7 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B2%5D.png" alt="dataset description" width="300">
 </div>
 <br>
+
 - Memvalidasi Data
   Validasi data dilakukan untuk menilai kesesuaian kualitas data. Berikut hasil validasi data yang didapatkan.
 
@@ -102,19 +103,30 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   ```
 <br>
 <div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%26%20Label%20%5B1%5D.png" alt="dataset description" width="150">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%26%20Label%20%5B1%5D.png" alt="dataset description" width="400">
 </div>
 <div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%5B2%5D.png" alt="dataset description" width="150">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%5B2%5D.png" alt="dataset description" width="400">
 </div>
 <br>
+Berikut adalah berbagai visualisasi data yang dihasilkan. 
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/abbb94782d682be0d3726a986a13f2403a0577d5/Picture/Modeling/Visualisasi%20%5B1%5D.png" alt="dataset description" width="300">
+</div>
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/abbb94782d682be0d3726a986a13f2403a0577d5/Picture/Modeling/Visualisasi%20%5B2%5D.png" alt="dataset description" width="300">
+</div>
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/abbb94782d682be0d3726a986a13f2403a0577d5/Picture/Modeling/Visualisasi%20%5B3%5D.png" alt="dataset description" width="300">
+</div>
 
 ## _Data Preparation_
 - Memilih dan Memilah Data<br>
 ```
-Pada langkah ini, data yang tersedia dipilih dan dipilah berdasarkan kategori atau label yang akan digunakan.
-Proses ini akan memproses rekord data dan atribut data yang terpakai.
-Dataset yang digunakan pada proses ini sudah terdiri dari folder ”Train” dan ”Test yang berisi gambar sudah dikelompokkan kedalam kategori-kategori ulos tertentu.
+Pada langkah ini, data yang tersedia dipilih dan dipilah berdasarkan kategori atau label yang akan
+digunakan. Proses ini akan memproses rekord data dan atribut data yang terpakai.
+Dataset yang digunakan pada proses ini sudah terdiri dari folder ”Train” dan ”Test yang
+berisi gambar sudah dikelompokkan kedalam kategori-kategori ulos tertentu.
 ```
 <br>
 
@@ -122,54 +134,65 @@ Dataset yang digunakan pada proses ini sudah terdiri dari folder ”Train” dan
 ```
 Pada tahap ini, dilakukan pembersihan terhadap data gambar.
 Proses ini dilakukan untuk meminimalkan noise (tidak lengkap atau salah) pada data.
-Hasil akhirnya adalah data gambar yang telah terorganisasi, ternormalisasi, dan siap digunakan untuk melatih model.
+Hasil akhirnya adalah data gambar yang telah terorganisasi, ternormalisasi, dan siap digunakan untuk
+melatih model.
 ```
 <br>
 
 - Mengkonstruksi Data<br>
 ```
-Setelah data dibersihkan, dilakukan konstruksi dataset yaitu menambahkan feature engineering dan melakukan transformasi
-terhadap data (standardisasi dan normalisasi). Dataset yang sudah dikonstruksi kemudian akan digunakan untuk dibagi
-menjadi menjadi set pelatihan dan pengujian. Hasilnya adalah generator data training dan validasi yang siap digunakan untuk melatih model. 
+Setelah data dibersihkan, dilakukan konstruksi dataset yaitu menambahkan feature engineering dan
+melakukan transformasi terhadap data (standardisasi dan normalisasi). Dataset yang sudah dikonstruksi
+kemudian akan digunakan untuk dibagi menjadi menjadi set pelatihan dan pengujian. Hasilnya adalah
+generator data training dan validasi yang siap digunakan untuk melatih model. 
 ```
 
 - Integrasi Data<br>
 ```
-Pada tahap ini, akan dilakukan penggabungan terhadap data pelatihan dan pengujian yang telah dipisahkan sebelumnya.
-Terdapat proses pemanfaatan augmentasi data untuk menambah variasi dalam dataset pelatihan, yang dapat membantu model untuk generalisasi lebih baik.
-Teknik augmentasi yang umum digunakan adalah rotasi, pemotongan, dan flipping gambar secara acak. 
+Pada tahap ini, akan dilakukan penggabungan terhadap data pelatihan dan pengujian yang telah dipisahkan
+sebelumnya. Terdapat proses pemanfaatan augmentasi data untuk menambah variasi dalam dataset pelatihan,
+yang dapat membantu model untuk generalisasi lebih baik. Teknik augmentasi yang umum digunakan adalah
+rotasi, pemotongan, dan flipping gambar secara acak. 
 ```
 
 ## _Modeling_
 - Membangun Model CNN<br>
 ```
-Pembangunan model CNN dilakukan dengan pemrosesan data latih menggunakan ImageDataGenerator dengan augmentasi seperti rotasi, pergeseran, zoom,
-dan flipping untuk meningkatkan variasi data. Algoritma CNN terdiri dari empat lapisan konvolusi dengan kernel 3x3, masing-masing diikuti oleh
-pooling layer untuk mengurangi dimensi data. Setelah itu, data diratakan menggunakan lapisan Flatten dan diteruskan ke Fully Connected layer dengan 512 unit dan aktivasi ReLU. Dropout dengan rasio 0.5 ditambahkan untuk mengurangi risiko overfitting. Output layer menggunakan aktivasi softmax untuk menangani
-klasifikasi multi-kelas sesuai jumlah kategori dalam data. Hasil akhirnya adalah arsitektur model siap digunakan.
+Pembangunan model CNN dilakukan dengan pemrosesan data latih menggunakan ImageDataGenerator dengan
+augmentasi seperti rotasi, pergeseran, zoom, dan flipping untuk meningkatkan variasi data. Algoritma CNN
+terdiri dari empat lapisan konvolusi dengan kernel 3x3, masing-masing diikuti oleh pooling layer untuk
+mengurangi dimensi data. Setelah itu, data diratakan menggunakan lapisan Flatten dan diteruskan ke Fully
+Connected layer dengan 512 unit dan aktivasi ReLU. Dropout dengan rasio 0.5 ditambahkan untuk mengurangi
+risiko overfitting. Output layer menggunakan aktivasi softmax untuk menangani klasifikasi multi-kelas sesuai
+jumlah kategori dalam data. Hasil akhirnya adalah arsitektur model siap digunakan.
 ```
 <br>
 
 - Melatih Model CNN<br>
 ```
-Kompilasi model dilakukan menggunakan optimizer Adam, fungsi loss categorical_crossentropy untuk menangani klasifikasi multi-kelas, dan metrik evaluasi accuracy.
-Model kemudian dilatih selama 30 epoch menggunakan data augmentasi yang dihasilkan oleh train_generator, dengan jumlah langkah per epoch ditentukan oleh jumlah sampel dibagi ukuran batch.
-Setelah pelatihan selesai, model disimpan dalam file model_ulos.h5, memungkinkan pengguna untuk memuat dan menggunakan model di kemudian hari tanpa perlu melatih ulang. Hasil akhirnya adalah model terlatih yang dapat mengklasifikasikan gambar kain Ulos ke dalam kategori yang sesuai berdasarkan pola visual.
+Kompilasi model dilakukan menggunakan optimizer Adam, fungsi loss categorical_crossentropy untuk menangani
+klasifikasi multi-kelas, dan metrik evaluasi accuracy. Model kemudian dilatih selama 30 epoch menggunakan
+data augmentasi yang dihasilkan oleh train_generator, dengan jumlah langkah per epoch ditentukan oleh jumlah
+sampel dibagi ukuran batch. Setelah pelatihan selesai, model disimpan dalam file model_ulos.h5, memungkinkan
+pengguna untuk memuat dan menggunakan model di kemudian hari tanpa perlu melatih ulang. Hasil akhirnya adalah
+model terlatih yang dapat mengklasifikasikan gambar kain Ulos ke dalam kategori yang sesuai berdasarkan
+pola visual.
 ```
 <br>
 
 - Menguji Model CNN<br>
 ```
 Tahap terakhir dari modeling adalah menguji model untuk mengukur performansi dari model yang digunakan.
-```
-```
-Proses pemuatan data uji diatas dilakukan dengan menggunakan ImageDataGenerator untuk preprocessing data uji. Selanjutnya, digunakan test_generator untuk memuat gambar dari direktori data uji, dan mengubah ukuran gambar. Terakhir, dilakukan pengecekan urutan data dengan menggunakan shuffle=false.
-```
-```
-Proses prediksi pada data uji diatas dilakukan untuk menghasilkan probabilitas untuk setiap kelas. Kelas akan didapatkan dengan probabilitas tertinggi sebagai prediksi, dan kemudian dilakukan penyimpanan label sebenarnya dari data uji untuk nantinya digunakan sebagai pembanding hasil prediksi.
-```
-```
-Kode diatas menghasilkan matrix yang menunjukkan perbandingan antara hasil prediksi model dengan label sebenarnya, yang nantinya akan digunakan untuk membantu mengevaluasi kinerja model. Visualisasi ditampilkan dengan menggunakan seaborn.heatmap untuk melihat distribusi prediksi di tiap kelas. 
+Proses pemuatan data uji diatas dilakukan dengan menggunakan ImageDataGenerator untuk preprocessing data uji.
+Selanjutnya, digunakan test_generator untuk memuat gambar dari direktori data uji, dan mengubah ukuran gambar.
+Terakhir, dilakukan pengecekan urutan data dengan menggunakan shuffle=false.
+
+Proses prediksi pada data uji diatas dilakukan untuk menghasilkan probabilitas untuk setiap kelas. Kelas akan
+didapatkan dengan probabilitas tertinggi sebagai prediksi, dan kemudian dilakukan penyimpanan label sebenarnya
+dari data uji untuk nantinya digunakan sebagai pembanding hasil prediksi. Dari proses ini akan menghasilkan
+matrix yang menunjukkan perbandingan antara hasil prediksi model dengan label sebenarnya, yang nantinya akan
+digunakan untuk membantu mengevaluasi kinerja model. Visualisasi ditampilkan dengan menggunakan seaborn.heatmap
+untuk melihat distribusi prediksi di tiap kelas. 
 ```
 <br>
 Berikut visualisasi Confusion Matrix dan Grafik Heatmap yang disajikan.
@@ -182,11 +205,50 @@ Berikut visualisasi Confusion Matrix dan Grafik Heatmap yang disajikan.
 </div>
 <br>
 
-
 ## _Evaluation_
+Hasil evaluasi model yang digunakan adalah:
+```
+Accuracy: 0.9327
+Precision: 0.9392
+Recall: 0.9331
+F1-Score: 0.9330
+```
+<br>
 
+- Evaluasi Performa Model<br>
+Berikut adalah hasil evaluasi performa model CNN yang telah dilakukan:
+```
+1. Accuracy
+   Model menghasilkan akurasi sebesar 93.27%, yang berarti ini menunjukkan akurasi yang sangat tinggi dan
+   sebagian besar prediksi model adalah benar.
+3. Precision
+   Nilai precision yang dihasilkan adalah 93.92%, yang menunjukkan bahwa hampir semua prediksi positif yang
+   dihasilkan oleh model adalah benar (low false positives).
+5. Recall:
+   Model menghasilkan nilai recall sebesar 93.31%, yang menunjukkan bahwa model dapat melakukan deteksi pada
+   sebagian besar data positif dengan sangat baik. Ini juga menunjukkan bahwa model yang digunakan tidak
+   melewatkan banyak contoh positif (low false negatives).
+7. F1-Score:
+   Dengan nilai F1-Score sebesar 93.30%, menunjukkan bahwa model yang digunakan memiliki keseimbangan yang
+   baik antara precision dan recall.
+```
+Jadi dapat disimpulkan, bahwa model CNN yang digunakan sudah sangat baik.
+<br> 
+
+- Evaluasi Proses
+Meskipun model CNN yang digunakan sudah sangat baik, masih terdapat beberapa hal pada proses yang bisa diperbaiki, seperti:
+```
+- Penanganan overfitting yang dapat dilihat dari perbedaan besar antara akurasi pelatihan dan akurasi pengujian.
+  Model terlalu menyesuaikan dengan data latih dibandingkan dengan data uji.
+- Model hanya dievaluasi pada data uji, dan tidak diuji pada set data yang lain, sehingga memungkinkan model
+  tidak tergeneralisasi dengan baik.
+```
 
 ## _Deployment_
+Model diaplikasikan kedalam Streamlit CLoud. Aplikasi Streamlit ini memungkinkan pengguna mengunggah gambar ulos untuk diprediksi menggunakan model CNN yang telah dilatih. Setelah diproses, aplikasi menampilkan prediksi kelas ulos beserta grafik tingkat kepercayaan model, sehingga pengguna dapat melihat seberapa akurat prediksi tersebut.
+Streamlit dan dapat diakses  <a
+    href="https://ulosclassification.streamlit.app/">
+    <button>_disini._</button></a>!<br />
 
 ### _Timeline_
 _See the timeline_ <a
