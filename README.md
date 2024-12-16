@@ -71,9 +71,11 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
 
 <div align="center">
   <img src="Picture/Data Understanding/Keterkaitan Antar Data [1].png" alt="dataset description" width="50">
+</div>
+<div align="center">
   <img src="Picture/Data Understanding/Keterkaitan Antar Data [2].png" alt="dataset description" width="50">
 </div>
- <br>
+<br>
  
 - Memvalidasi Data
   Validasi data dilakukan untuk menilai kesesuaian kualitas data. Berikut hasil validasi data yang didapatkan.
@@ -102,8 +104,11 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   ```
 <div align="center">
   <img src="Picture/Data Understanding/Relasi_Antar_Atribut_&_Label_[1].png" alt="dataset description" width="100">
+</div>
+<div align="center">
   <img src="Picture/Data Understanding/Relasi_Antar_Atribut_[2].png" alt="dataset description" width="100">
 </div>
+<br>
 
 ## _Modeling_
 
