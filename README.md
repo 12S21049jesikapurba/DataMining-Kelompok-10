@@ -70,10 +70,10 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
  <br>
 
 <div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png" alt="dataset description" width="50">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png" alt="dataset description" width="150">
 </div>
 <div align="center">
-  <img src="Picture/Data Understanding/Keterkaitan Antar Data [2].png" alt="dataset description" width="50">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B2%5D.png" width="150">
 </div>
 <br>
  
@@ -103,10 +103,10 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   Tumtuman       0    0   162   44
   ```
 <div align="center">
-  <img src="Picture/Data Understanding/Relasi_Antar_Atribut_&_Label_[1].png" alt="dataset description" width="100">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%26%20Label%20%5B1%5D.png" alt="dataset description" width="150">
 </div>
 <div align="center">
-  <img src="Picture/Data Understanding/Relasi_Antar_Atribut_[2].png" alt="dataset description" width="100">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%5B2%5D.png" alt="dataset description" width="150">
 </div>
 <br>
 
