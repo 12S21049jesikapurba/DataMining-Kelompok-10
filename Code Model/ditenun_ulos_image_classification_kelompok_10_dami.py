@@ -942,8 +942,6 @@ print(f"Data Integration Completed. Total images: {len(data)}")
 """# **`Modeling`**
 
 **`Membangun Model CNN`**
-
-**`Melatih Model CNN`**
 """
 
 import tensorflow as tf
@@ -1010,6 +1008,8 @@ model.add(layers.Dense(train_generator.num_classes, activation='softmax'))  # 's
 model.summary()
 
 print("Model Architecture Completed")
+
+"""**`Melatih Model CNN`**"""
 
 # Kompilasi model
 model.compile(optimizer='adam',
