@@ -70,7 +70,7 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
  <br>
 
 <div align="center">
-  <img src="Picture/Data Understanding/Keterkaitan Antar Data [1].png" alt="dataset description" width="50">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png" alt="dataset description" width="50">
 </div>
 <div align="center">
   <img src="Picture/Data Understanding/Keterkaitan Antar Data [2].png" alt="dataset description" width="50">
