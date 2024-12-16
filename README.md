@@ -69,10 +69,12 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   ```
 <br>
 <div align="center">
-  <img src="[Picture/Data Understanding/Keterkaitan Antar Data [1].png](https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png)" alt="dataset description" width="250">
-  <img src="[Picture/Data Understanding/Keterkaitan Antar Data [2].png](https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B2%5D.png)" alt="dataset description" width="250">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png" alt="dataset description" width="300">
 </div>
- <br>
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B2%5D.png" alt="dataset description" width="300">
+</div>
+<br>
 - Memvalidasi Data
   Validasi data dilakukan untuk menilai kesesuaian kualitas data. Berikut hasil validasi data yang didapatkan.
 
@@ -98,6 +100,7 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   Sibolang       0    0    50  156
   Tumtuman       0    0   162   44
   ```
+<br>
 <div align="center">
   <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%26%20Label%20%5B1%5D.png" alt="dataset description" width="150">
 </div>
@@ -106,8 +109,78 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
 </div>
 <br>
 
+## _Data Preparation_
+- Memilih dan Memilah Data<br>
+```
+Pada langkah ini, data yang tersedia dipilih dan dipilah berdasarkan kategori atau label yang akan digunakan.
+Proses ini akan memproses rekord data dan atribut data yang terpakai.
+Dataset yang digunakan pada proses ini sudah terdiri dari folder ”Train” dan ”Test yang berisi gambar sudah dikelompokkan kedalam kategori-kategori ulos tertentu.
+```
+<br>
+
+- Membersihkan Data <br>
+```
+Pada tahap ini, dilakukan pembersihan terhadap data gambar.
+Proses ini dilakukan untuk meminimalkan noise (tidak lengkap atau salah) pada data.
+Hasil akhirnya adalah data gambar yang telah terorganisasi, ternormalisasi, dan siap digunakan untuk melatih model.
+```
+<br>
+
+- Mengkonstruksi Data<br>
+```
+Setelah data dibersihkan, dilakukan konstruksi dataset yaitu menambahkan feature engineering dan melakukan transformasi
+terhadap data (standardisasi dan normalisasi). Dataset yang sudah dikonstruksi kemudian akan digunakan untuk dibagi
+menjadi menjadi set pelatihan dan pengujian. Hasilnya adalah generator data training dan validasi yang siap digunakan untuk melatih model. 
+```
+
+- Integrasi Data<br>
+```
+Pada tahap ini, akan dilakukan penggabungan terhadap data pelatihan dan pengujian yang telah dipisahkan sebelumnya.
+Terdapat proses pemanfaatan augmentasi data untuk menambah variasi dalam dataset pelatihan, yang dapat membantu model untuk generalisasi lebih baik.
+Teknik augmentasi yang umum digunakan adalah rotasi, pemotongan, dan flipping gambar secara acak. 
+```
 
 ## _Modeling_
+- Membangun Model CNN<br>
+```
+Pembangunan model CNN dilakukan dengan pemrosesan data latih menggunakan ImageDataGenerator dengan augmentasi seperti rotasi, pergeseran, zoom,
+dan flipping untuk meningkatkan variasi data. Algoritma CNN terdiri dari empat lapisan konvolusi dengan kernel 3x3, masing-masing diikuti oleh
+pooling layer untuk mengurangi dimensi data. Setelah itu, data diratakan menggunakan lapisan Flatten dan diteruskan ke Fully Connected layer dengan 512 unit dan aktivasi ReLU. Dropout dengan rasio 0.5 ditambahkan untuk mengurangi risiko overfitting. Output layer menggunakan aktivasi softmax untuk menangani
+klasifikasi multi-kelas sesuai jumlah kategori dalam data. Hasil akhirnya adalah arsitektur model siap digunakan.
+```
+<br>
+
+- Melatih Model CNN<br>
+```
+Kompilasi model dilakukan menggunakan optimizer Adam, fungsi loss categorical_crossentropy untuk menangani klasifikasi multi-kelas, dan metrik evaluasi accuracy.
+Model kemudian dilatih selama 30 epoch menggunakan data augmentasi yang dihasilkan oleh train_generator, dengan jumlah langkah per epoch ditentukan oleh jumlah sampel dibagi ukuran batch.
+Setelah pelatihan selesai, model disimpan dalam file model_ulos.h5, memungkinkan pengguna untuk memuat dan menggunakan model di kemudian hari tanpa perlu melatih ulang. Hasil akhirnya adalah model terlatih yang dapat mengklasifikasikan gambar kain Ulos ke dalam kategori yang sesuai berdasarkan pola visual.
+```
+<br>
+
+- Menguji Model CNN<br>
+```
+Tahap terakhir dari modeling adalah menguji model untuk mengukur performansi dari model yang digunakan.
+```
+```
+Proses pemuatan data uji diatas dilakukan dengan menggunakan ImageDataGenerator untuk preprocessing data uji. Selanjutnya, digunakan test_generator untuk memuat gambar dari direktori data uji, dan mengubah ukuran gambar. Terakhir, dilakukan pengecekan urutan data dengan menggunakan shuffle=false.
+```
+```
+Proses prediksi pada data uji diatas dilakukan untuk menghasilkan probabilitas untuk setiap kelas. Kelas akan didapatkan dengan probabilitas tertinggi sebagai prediksi, dan kemudian dilakukan penyimpanan label sebenarnya dari data uji untuk nantinya digunakan sebagai pembanding hasil prediksi.
+```
+```
+Kode diatas menghasilkan matrix yang menunjukkan perbandingan antara hasil prediksi model dengan label sebenarnya, yang nantinya akan digunakan untuk membantu mengevaluasi kinerja model. Visualisasi ditampilkan dengan menggunakan seaborn.heatmap untuk melihat distribusi prediksi di tiap kelas. 
+```
+<br>
+Berikut visualisasi Confusion Matrix dan Grafik Heatmap yang disajikan.
+<br>
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/e43609b4893d36d47be0c23263da88f50d86e965/Picture/Modeling/Conf%20Matrix.png" alt="dataset description" width="150">
+</div>
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/e43609b4893d36d47be0c23263da88f50d86e965/Picture/Modeling/TP%2C%20TN%2C%20FP%2C%20FN.png" alt="dataset description" width="150">
+</div>
+<br>
 
 
 ## _Evaluation_
