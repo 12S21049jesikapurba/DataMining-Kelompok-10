@@ -67,16 +67,12 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   
   Mutual Information between 'Category' and 'File Size (bytes)': 2.8846400016536338
   ```
- <br>
-
-<div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png" alt="dataset description" width="150">
-</div>
-<div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B2%5D.png" width="150">
-</div>
 <br>
- 
+<div align="center">
+  <img src="[Picture/Data Understanding/Keterkaitan Antar Data [1].png](https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/d5f0018e7b80689a529d1ca84f91a4beeff6e20f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B1%5D.png)" alt="dataset description" width="250">
+  <img src="[Picture/Data Understanding/Keterkaitan Antar Data [2].png](https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Keterkaitan%20Antar%20Data%20%5B2%5D.png)" alt="dataset description" width="250">
+</div>
+ <br>
 - Memvalidasi Data
   Validasi data dilakukan untuk menilai kesesuaian kualitas data. Berikut hasil validasi data yang didapatkan.
 
@@ -109,6 +105,7 @@ _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu un
   <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/f3e49b6509cadf19ff3a9903163538cf7e46d38f/Picture/Data%20Understanding/Relasi%20Antar%20Atribut%20%5B2%5D.png" alt="dataset description" width="150">
 </div>
 <br>
+
 
 ## _Modeling_
 
