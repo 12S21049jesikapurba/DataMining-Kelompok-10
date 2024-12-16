@@ -6,7 +6,7 @@ Klasifikasi untuk gambar motif ulos dengan menggunakan algoritma CNN (Convolutio
   <img src="Picture/DiTenun.png" alt="DiTenun Logo" width="800"/>
 </div>
 
-## 📑 _Business Understanding_
+## 📝 _Business Understanding_
 **DiTenun - Ulos _Image Classification_**
 
 `Based on Data `<br>
@@ -30,24 +30,24 @@ Ruang lingkup (Berdasarkan Work Breakdown Structure) dari proyek ini adalah seba
 
 _Timeline_ yang dibutuhkan untuk melakukan proyek ini adalah sekitar 5 minggu untuk proses pengumpulan dan pelabelan data sampai dengan implementasi (_deployment_).
 
-## _Data Understanding_
+## 📊 _Data Understanding_
 - Mengumpulkan data<br>
   Data dikumpulkan dari [Kaggle](https://www.kaggle.com/datasets/fthnaja/kain-ulos) yang berisi berbagai motif ulos.<br>
   Struktur dari dataset disajikan 2 per kelas motif ulos, dan dapat dilihat pada gambar dibawah ini. 
   <p align="center">
-  <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="200">
+  <img src="Picture/Data Understanding/Deskripsi Data.png" alt="dataset description" width="300">
 </p>
   <br>
    Jumlah gambar yang terdapat pada dataset adalah 1.231 gambar dan jumlah untuk masing-masing kelas dapat dilihat pada gambar dibawah ini.
 <p align="center">
-  <img src="Picture/Data Understanding/Mengumpulkan Data.png" alt="dataset description" width="200"><br>
+  <img src="Picture/Data Understanding/Mengumpulkan Data.png" alt="dataset description" width="300"><br>
   <br>
   
 - Menelaah Data
   Proses analisis data dilakukan secara eksploratif (_Exploratory Data Analysis_).<br>
   Karakteristik atribut yang diperoleh adalah sebagai berikut:
 <p align="center">
-  <img src="Picture/Data Understanding/Karakteristik Atribut.png" alt="dataset description" width="200">
+  <img src="Picture/Data Understanding/Karakteristik Atribut.png" alt="dataset description" width="300">
    <br>
  
   Keterkaitan antar data dianalisisi dengan menggunakan metode Anova, Kendall's Tau Test, dan Chi-Square Test. 
@@ -119,8 +119,11 @@ Berikut adalah berbagai visualisasi data yang dihasilkan.
 <div align="center">
   <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/abbb94782d682be0d3726a986a13f2403a0577d5/Picture/Modeling/Visualisasi%20%5B3%5D.png" alt="dataset description" width="300">
 </div>
+<div align="center">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/c2f67bb89085e40e167ac691c2d8b94a1cfe67a9/Picture/Modeling/Visualisasi%20%5B4%5D.png" alt="dataset description" width="300">
+</div>
 
-## _Data Preparation_
+## 📚 _Data Preparation_
 - Memilih dan Memilah Data<br>
 ```
 Pada langkah ini, data yang tersedia dipilih dan dipilah berdasarkan kategori atau label yang akan
@@ -155,7 +158,7 @@ yang dapat membantu model untuk generalisasi lebih baik. Teknik augmentasi yang 
 rotasi, pemotongan, dan flipping gambar secara acak. 
 ```
 
-## _Modeling_
+## 💡 _Modeling_
 - Membangun Model CNN<br>
 ```
 Pembangunan model CNN dilakukan dengan pemrosesan data latih menggunakan ImageDataGenerator dengan
@@ -198,14 +201,14 @@ untuk melihat distribusi prediksi di tiap kelas.
 Berikut visualisasi Confusion Matrix dan Grafik Heatmap yang disajikan.
 <br>
 <div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/e43609b4893d36d47be0c23263da88f50d86e965/Picture/Modeling/Conf%20Matrix.png" alt="dataset description" width="150">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/e43609b4893d36d47be0c23263da88f50d86e965/Picture/Modeling/Conf%20Matrix.png" alt="dataset description" width="300">
 </div>
 <div align="center">
-  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/e43609b4893d36d47be0c23263da88f50d86e965/Picture/Modeling/TP%2C%20TN%2C%20FP%2C%20FN.png" alt="dataset description" width="150">
+  <img src="https://github.com/12S21049jesikapurba/DataMining-Kelompok10_Case4/blob/e43609b4893d36d47be0c23263da88f50d86e965/Picture/Modeling/TP%2C%20TN%2C%20FP%2C%20FN.png" alt="dataset description" width="300">
 </div>
 <br>
 
-## _Evaluation_
+## 💻 _Evaluation_
 Hasil evaluasi model yang digunakan adalah:
 ```
 Accuracy: 0.9327
@@ -248,9 +251,9 @@ Meskipun model CNN yang digunakan sudah sangat baik, masih terdapat beberapa hal
 Model diaplikasikan kedalam Streamlit CLoud. Aplikasi Streamlit ini memungkinkan pengguna mengunggah gambar ulos untuk diprediksi menggunakan model CNN yang telah dilatih. Setelah diproses, aplikasi menampilkan prediksi kelas ulos beserta grafik tingkat kepercayaan model, sehingga pengguna dapat melihat seberapa akurat prediksi tersebut.
 Streamlit dan dapat diakses  <a
     href="https://ulosclassification.streamlit.app/">
-    <button>_disini._</button></a>!<br />
+    <button>_disini._</button></a>!<br/>
 
-### _Timeline_
+## 📆 _Timeline_
 _See the timeline_ <a
     href="https://docs.google.com/spreadsheets/d/1VXhPiIWqko85sHdpUdVkVoxPtRhJi3Kr-K-TBdkKMRg/edit?usp=sharing">
     <button>_here_</button></a>!<br />
