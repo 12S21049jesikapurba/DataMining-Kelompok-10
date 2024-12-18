@@ -70,6 +70,7 @@ if page == "Klasifikasi Gambar":
                 st.error(
                     f"Gambar yang diunggah tidak dikenali sebagai motif ulos. Confidence: {confidence:.2f}"
                 )
+                st.write("Model hanya mendukung klasifikasi gambar ulos dengan tingkat kepercayaan yang memadai.")
                 st.stop()  # Menghentikan eksekusi jika gambar bukan ulos
 
             # Lanjutkan prediksi jika validasi berhasil
@@ -87,7 +88,7 @@ if page == "Klasifikasi Gambar":
                 # Tampilkan visualisasi confidence level
                 plot_confidence(prediction, class_names)
 
-               # Deskripsi tambahan tentang ulos yang diprediksi
+                # Deskripsi tambahan tentang ulos yang diprediksi
                 ulos_descriptions = {
                     "Pinuncaan": {
                         "Desain": "Ulos ini memiliki struktur yang terdiri dari lima bagian yang ditenun secara terpisah dan kemudian disatukan. Motifnya biasanya menggunakan warna-warna cerah dengan pola geometris yang khas.",
