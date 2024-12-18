@@ -163,4 +163,4 @@ elif page == "Panduan Pengguna":
     )
 
 st.write("\n\n")
-st.write("Developed by Kelompok 3 - Data Mining")
+st.write("Developed by Kelompok 10 - Data Mining")
