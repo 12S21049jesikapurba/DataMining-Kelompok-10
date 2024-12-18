@@ -942,13 +942,14 @@ print(f"Data Integration Completed. Total images: {len(data)}")
 """# **`Modeling`**
 
 **`Membangun Model CNN`**
-
-**`Melatih Model CNN`**
 """
 
+import os
+import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras import layers, models
+from sklearn.metrics import classification_report, confusion_matrix
 
 dataset_path = '/root/.cache/kagglehub/datasets/fthnaja/kain-ulos/versions/3'
 train_dir = os.path.join(dataset_path, 'Train')
@@ -960,90 +961,121 @@ categories = ['Tumtuman', 'Pinuncaan', 'Ragi Hotang', 'Sibolang', 'Sadum', 'Ragi
 # Data Augmentation untuk latih
 train_datagen = ImageDataGenerator(
     rescale=1./255,
-    rotation_range=40,
+    rotation_range=20,
     width_shift_range=0.2,
     height_shift_range=0.2,
     shear_range=0.2,
     zoom_range=0.2,
     horizontal_flip=True,
-    fill_mode='nearest'
-)
+    fill_mode='nearest')
 
-# Menggunakan ImageDataGenerator untuk memuat gambar dari folder latih
+test_datagen = ImageDataGenerator(rescale=1./255)
+
+# Data Generator untuk data latih
 train_generator = train_datagen.flow_from_directory(
     train_dir,
-    target_size=(150, 150),  # Ukuran gambar yang diinginkan
+    target_size=(150, 150),
     batch_size=32,
-    class_mode='categorical'  # Gunakan 'binary' jika dataset biner
-)
+    class_mode='categorical')
 
-# Definisikan model CNN
-model = models.Sequential()
+# Data Generator untuk data uji
+test_generator = test_datagen.flow_from_directory(
+    test_dir,
+    target_size=(150, 150),
+    batch_size=32,
+    class_mode='categorical',
+    shuffle=False)
 
-# Lapisan konvolusi pertama
-model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)))
-model.add(layers.MaxPooling2D((2, 2)))
-
-# Lapisan konvolusi kedua
-model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-model.add(layers.MaxPooling2D((2, 2)))
-
-# Lapisan konvolusi ketiga
-model.add(layers.Conv2D(128, (3, 3), activation='relu'))
-model.add(layers.MaxPooling2D((2, 2)))
-
-# Lapisan konvolusi keempat
-model.add(layers.Conv2D(128, (3, 3), activation='relu'))
-model.add(layers.MaxPooling2D((2, 2)))
-
-# Lapisan Flatten untuk mengubah data menjadi bentuk 1D sebelum masuk ke Fully Connected layer
-model.add(layers.Flatten())
-
-# Fully Connected layer
-model.add(layers.Dense(512, activation='relu'))
-model.add(layers.Dropout(0.5))  # Dropout untuk mencegah overfitting
-
-# Output layer
-model.add(layers.Dense(train_generator.num_classes, activation='softmax'))  # 'softmax' untuk multi-class, 'sigmoid' untuk binary
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(128, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),
+    layers.Dense(128, activation='relu'),
+    layers.Dropout(0.5),
+    layers.Dense(train_generator.num_classes, activation='softmax')
+])
 
 # Menampilkan ringkasan arsitektur model
 model.summary()
 
 print("Model Architecture Completed")
 
+"""**`Melatih Model CNN`**"""
+
 # Kompilasi model
 model.compile(optimizer='adam',
-              loss='categorical_crossentropy',  # Gunakan 'binary_crossentropy' untuk dataset biner
+              loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 # Melatih model
 history = model.fit(
     train_generator,
     steps_per_epoch=train_generator.samples // train_generator.batch_size,
-    epochs=30  # Tentukan jumlah epoch yang diinginkan
+    epochs=30
 )
-
-# Menyimpan model
-model.save('model_ulos.h5')
 
 """**`Menguji Model CNN`**"""
 
-# Data untuk uji
-test_datagen = ImageDataGenerator(rescale=1./255)
+# Evaluasi model pada data uji
+print("\nEvaluasi pada data uji:")
+loss, accuracy = model.evaluate(test_generator, steps=test_generator.samples // test_generator.batch_size)
+print(f"Test Loss: {loss}")
+print(f"Test Accuracy: {accuracy}")
 
-# Memuat data uji
-test_generator = test_datagen.flow_from_directory(
-    test_dir,
-    target_size=(150, 150),
-    batch_size=32,
-    class_mode='categorical',  # Gunakan 'binary' jika dataset biner
-    shuffle=False  # Penting untuk tidak mengacak urutan data pada pengujian
-)
+# Plot hasil evaluasi
+plt.figure(figsize=(12, 6))
 
-# Melakukan prediksi pada data uji
-predictions = model.predict(test_generator, steps=test_generator.samples // test_generator.batch_size, verbose=1)
-predicted_classes = predictions.argmax(axis=1)  # Prediksi kelas dengan nilai tertinggi
-true_classes = test_generator.classes  # Kelas yang sebenarnya
+# Plot akurasi
+plt.subplot(1, 2, 1)
+plt.plot(history.history['accuracy'], label='Train Accuracy')
+if 'val_accuracy' in history.history:
+    plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+plt.title('Model Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+
+# Plot loss
+plt.subplot(1, 2, 2)
+plt.plot(history.history['loss'], label='Train Loss')
+if 'val_loss' in history.history:
+    plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.title('Model Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+# Menyaring klasifikasi hanya untuk gambar ulos
+predictions = model.predict(test_generator)
+predicted_classes = np.argmax(predictions, axis=1)
+
+true_classes = test_generator.classes
+class_labels = list(test_generator.class_indices.keys())
+
+print("\nLaporan Klasifikasi:")
+print(classification_report(true_classes, predicted_classes, target_names=class_labels))
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# Menghitung accuracy
+accuracy = accuracy_score(true_classes, predicted_classes)
+print(f"Accuracy: {accuracy:.4f}")
+
+# Precision, Recall, dan F1-Score untuk multi-class classification
+precision = precision_score(true_classes, predicted_classes, average='macro')  # Average 'macro' untuk multi-class
+recall = recall_score(true_classes, predicted_classes, average='macro')
+f1 = f1_score(true_classes, predicted_classes, average='macro')
+
+print(f"Precision: {precision:.4f}")
+print(f"Recall: {recall:.4f}")
+print(f"F1-Score: {f1:.4f}")
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -1098,25 +1130,11 @@ plt.ylabel("Classes")
 plt.tight_layout()
 plt.show()
 
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-
-# Menghitung accuracy
-accuracy = accuracy_score(true_classes, predicted_classes)
-print(f"Accuracy: {accuracy:.4f}")
-
-# Precision, Recall, dan F1-Score untuk multi-class classification
-precision = precision_score(true_classes, predicted_classes, average='macro')  # Average 'macro' untuk multi-class
-recall = recall_score(true_classes, predicted_classes, average='macro')
-f1 = f1_score(true_classes, predicted_classes, average='macro')
-
-print(f"Precision: {precision:.4f}")
-print(f"Recall: {recall:.4f}")
-print(f"F1-Score: {f1:.4f}")
-
-"""# **`Simpan dan Buat Model`**"""
+"""# **`Simpan Model`**"""
 
 # Menyimpan model
 model.save('model_ulos.h5')
+print("Model telah disimpan sebagai 'model_ulos.h5'.")
 
 from google.colab import files
 files.download('model_ulos.h5')
